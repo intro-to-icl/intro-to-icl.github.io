@@ -1,142 +1,90 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-// More Works Dropdown Functionality
-function toggleMoreWorks() {
-    const dropdown = document.getElementById('moreWorksDropdown');
-    const button = document.querySelector('.more-works-btn');
-    
-    if (dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    } else {
-        dropdown.classList.add('show');
-        button.classList.add('active');
-    }
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const container = document.querySelector('.more-works-container');
-    const dropdown = document.getElementById('moreWorksDropdown');
-    const button = document.querySelector('.more-works-btn');
-    
-    if (container && !container.contains(event.target)) {
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    }
-});
-
-// Close dropdown on escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const dropdown = document.getElementById('moreWorksDropdown');
-        const button = document.querySelector('.more-works-btn');
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
-    }
-});
-
-// Copy BibTeX to clipboard
-function copyBibTeX() {
-    const bibtexElement = document.getElementById('bibtex-code');
-    const button = document.querySelector('.copy-bibtex-btn');
-    const copyText = button.querySelector('.copy-text');
-    
-    if (bibtexElement) {
-        navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
-            // Success feedback
-            button.classList.add('copied');
-            copyText.textContent = 'Cop';
-            
-            setTimeout(function() {
-                button.classList.remove('copied');
-                copyText.textContent = 'Copy';
-            }, 2000);
-        }).catch(function(err) {
-            console.error('Failed to copy: ', err);
-            // Fallback for older browsers
-            const textArea = document.createElement('textarea');
-            textArea.value = bibtexElement.textContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            
-            button.classList.add('copied');
-            copyText.textContent = 'Cop';
-            setTimeout(function() {
-                button.classList.remove('copied');
-                copyText.textContent = 'Copy';
-            }, 2000);
-        });
-    }
-}
-
-// Scroll to top functionality
 function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Show/hide scroll to top button
-window.addEventListener('scroll', function() {
-    const scrollButton = document.querySelector('.scroll-to-top');
-    if (window.pageYOffset > 300) {
-        scrollButton.classList.add('visible');
-    } else {
-        scrollButton.classList.remove('visible');
+function setupScrollToTop() {
+  const scrollButton = document.querySelector(".scroll-to-top");
+  if (!scrollButton) return;
+
+  const updateVisibility = () => {
+    scrollButton.classList.toggle("visible", window.scrollY > 500);
+  };
+
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  updateVisibility();
+}
+
+function setupNavigation() {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
+  if (!toggle || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      toggle.focus();
     }
+  });
+}
+
+function setupDemoFilters() {
+  const filterButtons = document.querySelectorAll("[data-filter]");
+  const demoCards = document.querySelectorAll(".demo-column[data-category]");
+  const status = document.getElementById("filter-status");
+  if (!filterButtons.length || !demoCards.length) return;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.filter;
+
+      filterButtons.forEach((candidate) => {
+        const isActive = candidate === button;
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-pressed", String(isActive));
+      });
+
+      let visibleCount = 0;
+      demoCards.forEach((card) => {
+        const shouldShow = selected === "all" || card.dataset.category === selected;
+        card.hidden = !shouldShow;
+        if (shouldShow) visibleCount += 1;
+      });
+
+      if (status) {
+        status.textContent = `${visibleCount} tutorial${visibleCount === 1 ? "" : "s"} shown`;
+      }
+    });
+  });
+}
+
+function setupExternalLinks() {
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    const rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    rel.add("noopener");
+    rel.add("noreferrer");
+    link.setAttribute("rel", Array.from(rel).join(" "));
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupScrollToTop();
+  setupNavigation();
+  setupDemoFilters();
+  setupExternalLinks();
 });
-
-// Video carousel autoplay when in view
-function setupVideoCarouselAutoplay() {
-    const carouselVideos = document.querySelectorAll('.results-carousel video');
-    
-    if (carouselVideos.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-                // Video is in view, play it
-                video.play().catch(e => {
-                    // Autoplay failed, probably due to browser policy
-                    console.log('Autoplay prevented:', e);
-                });
-            } else {
-                // Video is out of view, pause it
-                video.pause();
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the video is visible
-    });
-    
-    carouselVideos.forEach(video => {
-        observer.observe(video);
-    });
-}
-
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
-
-    var options = {
-		slidesToScroll: 1,
-		slidesToShow: 1,
-		loop: true,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-    }
-
-	// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-	
-    bulmaSlider.attach();
-    
-    // Setup video autoplay for carousel
-    setupVideoCarouselAutoplay();
-
-})

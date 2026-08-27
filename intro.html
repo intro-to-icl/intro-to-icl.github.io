@@ -14,84 +14,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="Introduction to In-Context Learning - Hsiang Fu, Heni Ben Amor, Mohamed El Mistiri, Pratyush Kerhalkar">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="machine learning, reinforcement Learning, in-context learning, artificial intelligence, computer vision">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="Hsiang Fu, Heni Ben Amor, Mohamed El Mistiri, Pratyush Kerhalkar">
+  <meta name="title" content="Learn In-Context Learning">
+  <meta name="description" content="A clear introduction to how in-context learning works, how it differs from traditional machine learning, and how to try it yourself.">
+  <meta name="keywords" content="in-context learning, large language models, machine learning, few-shot learning, prompt examples, tutorial">
+  <meta name="author" content="Hsiang Fu, Heni Ben Amor, Mohamed El Mistiri, Pratyush Kerhalkar, Sachin Grover, Yifan Zhou, Kamalesh Kalirathinam">
   <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
+  <link rel="canonical" href="https://intro-to-icl.github.io/intro.html">
+
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Interactive Robotics Lab, Arizona State University">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="Introduction to In-Context Learning">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="Introduction to In-Context Learning">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Introduction to In-Context Learning">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="Hsiang Fu">
-  <meta property="article:author" content="Heni Ben Amor">
-  <meta property="article:author" content="Mohamed El Mistiri">
-  <meta property="article:author" content="Pratyush Kerhalkar">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="in-context learning">
-  <meta property="article:tag" content="machine learning">
-
-  <!-- Twitter -->
-  <!-- <meta name="twitter:card" content="summary_large_image"> -->
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Introduction to In-Context Learning">
-  <meta name="citation_author" content="Fu, Hsiang">
-  <meta name="citation_author" content="Ben Amor, Heni">
-  <meta name="citation_author" content="El Mistiri, Mohamed">
-  <meta name="citation_author" content="Kerhalkar, Pratyush">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:title" content="Learn In-Context Learning">
+  <meta property="og:description" content="A clear introduction to how models adapt from examples without retraining.">
+  <meta property="og:url" content="https://intro-to-icl.github.io/intro.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Learn In-Context Learning">
+  <meta name="twitter:description" content="A clear introduction to how models adapt from examples without retraining.">
+  <meta name="theme-color" content="#8c1d40">
   
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>About - Introduction to In-Context Learning</title>
+  <title>Learn ICL | Introduction to In-Context Learning</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -101,145 +44,79 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
-  <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Hsiang Fu",
-        "affiliation": {
-          "@type": "Interactive Robotics Lab",
-          "name": "Arizona State University"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Heni Ben Amor",
-        "affiliation": {
-          "@type": "Interactive Robotics Lab",
-          "name": "Arizona State University"
-        }
-      }
-    ],
-
-    "datePublished": "2025-11-27",
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "@type": "LearningResource",
+    "name": "Learn In-Context Learning",
+    "url": "https://intro-to-icl.github.io/intro.html",
+    "description": "An introduction to how in-context learning works and how it differs from traditional machine learning.",
+    "educationalLevel": "Introductory",
+    "learningResourceType": "Tutorial",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "about": "In-context learning"
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="site-nav-inner">
+      <a class="site-brand" href="index.html" aria-label="Introduction to In-Context Learning home">
+        <span class="brand-mark" aria-hidden="true">ICL</span>
+        <span class="brand-text">Introduction to ICL</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-links"><span></span></button>
+      <div class="nav-links" id="primary-links">
+        <a href="index.html">Home</a>
+        <a href="intro.html" aria-current="page">Learn ICL</a>
+        <a href="index.html#demos">Demos</a>
+        <a href="https://github.com/hsiang-fu/icl_demos" target="_blank">Code</a>
+      </div>
+    </div>
+  </nav>
 
-
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
   <main id="main-content">
-  <section class="nerd" >
+  <section class="nerd">
     <div class="nerd-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Introduction to In-Context Learning:</h1>
-            <h2 class="title is-2">For Language, Computer Vision, and Robotics</h2>
+            <span class="hero-kicker">Foundations</span>
+            <h1 class="title is-1 publication-title">Learn In-Context Learning</h1>
+            <h2 class="title is-2 hero-subtitle">How models adapt from instructions and examples—without retraining</h2>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://hsiang-fu.github.io/" target="_blank" style="color: #8C1D40 !important;">Hsiang Fu</a>,</span>
+                <a href="https://hsiang-fu.github.io/" target="_blank">Hsiang Fu</a>,</span>
               <span class="author-block">
-                <a href="https://mohamedelmistiri.github.io/" target="_blank" style="color: #8C1D40 !important;">Mohamed El Mistiri</a>,</span>
+                <a href="https://mohamedelmistiri.github.io/" target="_blank">Mohamed El Mistiri</a>,</span>
               <span class="author-block">
-                <a href="https://k-pratyush.github.io/" target="_blank" style="color: #8C1D40 !important;">Pratyush Kerhalkar</a>,</span>
+                <a href="https://k-pratyush.github.io/" target="_blank">Pratyush Kerhalkar</a>,</span>
               <span class="author-block">
-                <a href="https://sachingrover211.github.io/" target="_blank" style="color: #8C1D40 !important;">Sachin Grover</a>,</span>
+                <a href="https://sachingrover211.github.io/" target="_blank">Sachin Grover</a>,</span>
               <span class="author-block">
-                <a href="https://yifanzhou.com/" target="_blank" style="color: #8C1D40 !important;">Yifan Zhou</a>,</span>
+                <a href="https://yifanzhou.com/" target="_blank">Yifan Zhou</a>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=zAAmfKkAAAAJ&hl=en" target="_blank" style="color: #8C1D40 !important;">Kamalesh Kalirathinam</a>,</span>
+                <a href="https://scholar.google.com/citations?user=zAAmfKkAAAAJ&amp;hl=en" target="_blank">Kamalesh Kalirathinam</a>,</span>
               <span class="author-block">
-                <a href="https://henibenamor.weebly.com/" target="_blank" style="color: #8C1D40 !important;">Heni Ben Amor</a></span>
+                <a href="https://henibenamor.weebly.com/" target="_blank">Heni Ben Amor</a></span>
             </div>
-                  <div class="is-size-5 publication-authors-1">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><a href="https://interactive-robotics.engineering.asu.edu/" target="_blank" style="color: #2a2a2a !important;">Interactive Robotics Lab</a></span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                     <br>
-                     <br>
-                     <img src="static/images/asu.png" alt="Ariziona State University" style="height: 50px;">
+                  <div class="is-size-5 publication-authors-1 lab-lockup">
+                    <span class="author-block"><a href="https://interactive-robotics.engineering.asu.edu/" target="_blank">Interactive Robotics Lab</a></span>
+                    <img src="static/images/asu.png" alt="Arizona State University">
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
                         <a href="https://github.com/hsiang-fu/icl_demos" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
@@ -250,14 +127,12 @@
                       </a>
                     </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
                     <span class="link-block">
-                      <a href="https://drive.google.com/drive/folders/1NFf7mnk8v5Z3A2JeIBdeNt-ifKLDQEXW?usp=sharing" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
+                      <a href="index.html#demos" class="external-link button is-normal is-light-outline">
                       <span class="icon">
-                        <i class="fab fa-google-drive"></i>
+                        <i class="fas fa-flask"></i>
                       </span>
-                      <span>Demos</span>
+                      <span>Browse tutorials</span>
                     </a>
                   </span>
             </div>
@@ -271,11 +146,20 @@
 
 <!-- Paper abstract -->
 <section class="section hero is-white">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-sevenths">
-        <h2 class="title is-3">Learning Through Context</h2>
-        <div class="content has-text-justified" style="align-items: stretch;">
+  <div class="container is-widescreen reading-layout">
+    <aside class="page-toc" aria-label="On this page">
+      <strong>On this page</strong>
+      <a href="#learning-through-context">Learning through context</a>
+      <a href="#how-icl-works">How ICL works</a>
+      <a href="#simple-analogy">A simple analogy</a>
+      <a href="#icl-vs-ml">ICL vs. traditional ML</a>
+      <a href="#simple-demo">Interactive demo</a>
+      <a href="#key-differences">Key differences</a>
+      <a href="#references">References</a>
+    </aside>
+    <article class="reading-content">
+        <h2 class="title is-3" id="learning-through-context">Learning Through Context</h2>
+        <div class="content has-text-justified">
         <p>
           In-Context Learning (ICL) is a powerful method that enables large language models (LLMs) to perform new tasks without modifying any of their internal parameters. Traditionally, LLMs are used as simple oracles: we pose a question, and they provide an answer. Recent work, however, shows that when we supply curated examples and engage the model iteratively, it can explore a broader solution space and progressively refine its reasoning. Unlike conventional machine learning pipelines—which rely on retraining, gradient updates, or fine-tuning on new datasets—ICL operates entirely through the input prompt. By embedding instructions, examples, or demonstrations directly into the text, we guide the model to infer patterns and adjust its output behavior dynamically. In this sense, the model “learns” in real time during the interaction, rather than through an offline training process<sup>[2]</sup>.
         </p>
@@ -288,47 +172,44 @@
         <p>
           Since ICL requires no training pipeline, it offers flexibility and efficiency. It allows rapid iteration, adapts to a wide range of tasks, and supports few-shot or even zero-shot generalization. This capability is one of the reasons modern LLMs are so versatile: they can flexibly shift between tasks—from classification and reasoning to translation and summarization—simply by receiving the right context.
         </p>
-        <div class="content has-text-justified" style="align-items: stretch;">
-          <p></p>
         </div>
-        </div>
-        <h2 class="title is-3">How does In-Context Learning Work?</h2>
-        <div class="content has-text-justified" style="align-items: stretch;">
+        <h2 class="title is-3" id="how-icl-works">How Does In-Context Learning Work?</h2>
+        <div class="content has-text-justified">
           <p>
             LLMs learn from examples by reading them as part of the input. The model looks for patterns, relationships, or rules that connect the example inputs to their corresponding outputs. Once it detects these patterns, it applies them to new information that's provided.
           </p>
 
-          <h3 class="title is-4">1. The Model Reads Examples Like a Story</h3>
+          <div class="step-card"><h3 class="title is-4">1. The Model Reads Examples Like a Story</h3>
           <p>
             When we give a sequence of examples, the model processes them just like reading sentences in a story. For example:
           </p>
           <pre><code>1 → 2<br>2 → 4<br>3 → 6<br>4 → ?</code></pre>
           <p>
             The model processes these in order, identifies the underlying pattern—multiplying by two—and in this case, uses that pattern to generate the appropriate continuation, which would be 8.
-          </p>
+          </p></div>
 
-          <h3 class="title is-4">2. The Model Detects Patterns</h3>
+          <div class="step-card"><h3 class="title is-4">2. The Model Detects Patterns</h3>
           <p>
             After being trained on vast and varied datasets, LLMs develop strong and highly flexible pattern-recognition abilities. During ICL, the model draws on this internal knowledge to compare the examples it’s given, noticing subtle relationships in structure, meaning, or logic. From there, it infers the underlying rule or process being demonstrated—whether that rule involves numerical relationships, text-to-text transformations, multi-step reasoning patterns, or even abstract visual or spatial structures. In essence, the model generalizes from the demonstration much like a human would: by recognizing what stays consistent across examples, identifying what changes, and mapping those insights onto the new input. This ability to fluidly extract patterns allows LLMs to perform new tasks on the fly without explicit retraining or access to labeled datasets.
-          </p>
+          </p></div>
 
-          <h3 class="title is-4">3. The Model Completes the Pattern</h3>
+          <div class="step-card"><h3 class="title is-4">3. The Model Completes the Pattern</h3>
           <p>
             After recognizing the pattern, the model continues it by applying the inferred rule to the new input. Once the relationship between the examples is clear, the model extends that logic in a consistent and coherent way. For example:
           </p>
           <pre>Translate to French: <br> cat → chat <br> dog → chien <br> bird → oiseau <br> horse → ?</pre>
           <p>
             Because it has identified that each English word is being mapped to its French equivalent, the model fills in the missing piece—horse → cheval—thereby completing the demonstrated pattern. This process is not limited to language translation; the same mechanism applies to mathematical sequences, stylistic transformations, logical reasoning steps, and many other pattern-based tasks.
-          </p>
+          </p></div>
 
-          <h3 class="title is-4">4. No Training Required</h3>
+          <div class="step-card"><h3 class="title is-4">4. No Training Required</h3>
           <p>
             Most importantly, the model <strong>isn’t being retrained</strong>. Its parameters remain completely unchanged throughout the process. Instead of updating its weights, the model leverages the knowledge and structures it already acquired during pretraining. ICL works because the model uses this internal understanding to align with the patterns demonstrated in the examples, effectively simulating task adaptation on the fly, making it feel adaptive even without any weight updates.
-          </p>
+          </p></div>
         </div>
 
-        <h2 class="title is-3">Simple Analogy</h2>
-        <div class="content has-text-justified" style="align-items: stretch;">
+        <h2 class="title is-3" id="simple-analogy">Simple Analogy</h2>
+        <div class="content has-text-justified">
           <p>
             To understand how in-context learning works and how examples shape what pattern the LLM infers, consider this simple analogy with a child learning from drawings:
           </p>
@@ -340,7 +221,7 @@
             But the next two examples remove the ambiguity: Neither “red” nor “yellow” is the name of those fruits, so the child can infer that the pattern must be fruit → color rather than fruit → fruit name. With the pattern clarified, the child can now confidently continue it:
           </p>
           <pre>🍇 = purple</pre>
-          <p>Now, lets flip it around so the context examples given reflect the fruit name rather than the color.</p>
+          <p>Now, let’s flip it around so the context examples reflect the fruit name rather than the color.</p>
           <pre>🍊 = orange <br>🍎 = apple <br>🍌 = banana <br>🍇 = ?</pre>
           <p>
             In this case, because the second and third examples use fruit names rather than colors, the child infers the mapping is fruit → name of the fruit, instead of fruit → color. So:
@@ -350,9 +231,8 @@
             This is exactly how in-context learning works. When an LLM sees ambiguous examples, several interpretations may fit; but clear, consistent demonstrations push the model toward the intended pattern. The model infers the “rule” purely from context, so choosing representative examples is crucial. And when ambiguity can’t be avoided, adding a short instruction—like “map fruit to color” or “map fruit to name”—helps steer the model toward the correct task.
           </p>
         </div>
-        <br>
-        <h2 class="title is-3">In-Context Learning vs. Traditional ML</h2>
-        <div class="content has-text-justified" style="align-items: stretch;">
+        <h2 class="title is-3" id="icl-vs-ml">In-Context Learning vs. Traditional ML</h2>
+        <div class="content has-text-justified">
           <h3 class="title is-4">Traditional Machine Learning: “Learn First, Use Later”</h3>
           <p>
             In traditional machine learning, the process is divided into two major phases. The first phase is
@@ -361,8 +241,8 @@
             can take hours, days, or even weeks.
           </p>
           <figure>
-            <img src="static/images/traditional_ml.png" alt="Traditional Machine Learning Diagram" style="width: 100%; max-width: 500px; height: auto;">
-            <figcaption style="font-size: 15px;">Figure 1: Traditional ML involves two phases—training and inference.</figcaption>
+            <img src="static/images/traditional_ml.png" alt="Traditional machine learning diagram" loading="lazy" decoding="async">
+            <figcaption>Figure 1: Traditional ML involves two phases—training and inference.</figcaption>
           </figure>
           <b>Step 1: Training the Model</b>
           <p>
@@ -385,8 +265,8 @@
             reasoning.
           </p>
           <figure>
-            <img src="static/images/icl.png" alt="In-Context Learning Diagram" style="width: 100%; max-width: 500px; height: auto;">
-            <figcaption style="font-size: 15px;">Figure 2: ICL adapts behavior using context, with no parameter updates.</figcaption>
+            <img src="static/images/icl.png" alt="In-context learning diagram" loading="lazy" decoding="async">
+            <figcaption>Figure 2: ICL adapts behavior using context, with no parameter updates.</figcaption>
           </figure>
 
           <p>
@@ -399,11 +279,11 @@
             input query to generate both an output and, optionally, an explanation. Importantly, the model’s parameters
             remain unchanged. All adaptation happens dynamically inside the context window.
           </p>
-        <h2 class="title is-4">Lets Get Started with a Simple Demo</h2>
+        <h2 class="title is-3" id="simple-demo">Get Started with a Simple Demo</h2>
         
         <div class="content has-text-justified">
           <p>
-            This demo illustrates how LLMs can utlize ICL, inspired by <a href="https://arxiv.org/pdf/2307.04721" target="_blank" style="color: #8C1D40;"><i>Large Language Models as General Pattern Machines</i></a> (Mirchandani et al., 2023). To showcase this, we use tasks from the Abstract and Reasoning Corpus (ARC), introduced in <a href="https://arxiv.org/pdf/1911.01547" target="_blank" style="color: #8C1D40;"><i>On the Measure of Intelligence</i></a> (Chollet, 2019), a benchmark designed to test a system’s ability to perform human-like reasoning on small, symbolic grids. Each ARC task contains a set of colored grids that transform according to a hidden rule. To teach the model this rule, we present three input–output example pairs. These examples demonstrate how the transformation works—whether it involves moving objects, changing colors, detecting symmetry, or applying geometric operations.
+            This demo illustrates how LLMs can use ICL, inspired by <a href="https://arxiv.org/pdf/2307.04721" target="_blank"><i>Large Language Models as General Pattern Machines</i></a> (Mirchandani et al., 2023). To showcase this, we use tasks from the Abstract and Reasoning Corpus (ARC), introduced in <a href="https://arxiv.org/pdf/1911.01547" target="_blank"><i>On the Measure of Intelligence</i></a> (Chollet, 2019), a benchmark designed to test a system’s ability to perform human-like reasoning on small, symbolic grids. Each ARC task contains a set of colored grids that transform according to a hidden rule. To teach the model this rule, we present three input–output example pairs. These examples demonstrate how the transformation works—whether it involves moving objects, changing colors, detecting symmetry, or applying geometric operations.
           </p>
           <p>
             After seeing the examples, the model is given a new test input grid and must generate the correct output grid by inferring the underlying pattern and applying it consistently. In this demo, the Gemini 2.5-Flash model performs the reasoning and produces the predicted output grid.
@@ -418,36 +298,36 @@
           <p>
             The example image below lets you browse through the provided demonstrations. Use the arrows to explore each input–output example and observe how the LLM generalizes the rule to new cases.
           </p>
-          <div style="text-align:center; margin-top: 1.5rem;">
-              <figure style="max-width: 500px; margin: 0 auto;">
-                <img id="displayedImage" src="static/images/sequence_transformation_1.png" alt="Sequence Transformation Examples" style="border-radius: 10px; object-fit: cover;">
+          <div class="example-browser">
+              <figure>
+                <img id="displayedImage" src="static/images/sequence_transformation_1.png" alt="Sequence transformation task one">
               </figure>
 
-              <div class="buttons is-centered" style="margin-top: 1rem;">
-                <button class="button is-dark is-rounded" onclick="updateGlobalIndex(-1)">
+              <div class="example-controls">
+                <button class="button is-dark" type="button" onclick="updateGlobalIndex(-1)" aria-label="Show previous task">
                   <span class="icon"><i class="fa fa-arrow-left"></i></span>
                 </button>
 
-                <pre id="objectiveText" class="button is-static is-rounded" style="font-family: monospace;">Task One</pre>
+                <pre id="objectiveText" class="example-label">Task One</pre>
 
-                <button class="button is-dark is-rounded" onclick="updateGlobalIndex(1)">
+                <button class="button is-dark" type="button" onclick="updateGlobalIndex(1)" aria-label="Show next task">
                   <span class="icon"><i class="fa fa-arrow-right"></i></span>
                 </button>
               </div>
             </div>
             <br>
-            <div align="center">
-              <a href="https://colab.research.google.com/drive/1buA3TM0VWCR_8x3KT0ZzQnt0uEt3poIa?usp=sharing" target="_blank" class="external-link button is-normal is-rounded is-dark" style="box-shadow: 0 4px 8px rgba(0,0,0,0.25);">
+            <div class="section-cta">
+              <a href="https://colab.research.google.com/drive/1buA3TM0VWCR_8x3KT0ZzQnt0uEt3poIa?usp=sharing" target="_blank" class="external-link button is-normal is-dark">
                 <span class="icon">
                   <i class="fa fa-file"></i>
                 </span>
-                <span>Try the Full Tutorial Here</span>
+                <span>Open the full tutorial</span>
               </a>
             </div>
             <br>
         </div>
 
-          <h3 class="title is-4">Summary & Key Differences</h3>
+          <h3 class="title is-4" id="key-differences">Summary &amp; Key Differences</h3>
           <p>
             Traditional machine learning and in-context learning differ fundamentally in how they adapt to new tasks. In traditional ML, learning happens during training, and inference simply applies whatever the model learned previously; updating the model for new tasks requires adjusting its parameters, which is slow and computationally intensive. In contrast, ICL exhibits learning-like behavior during inference by using contextual examples, meaning no retraining is needed—changing the prompt is enough to adapt the model to new situations. A helpful way to think about this distinction is that traditional ML requires “studying ahead of time,” while ICL enables the model to “learn from examples in the moment.”
           </p>
@@ -455,8 +335,7 @@
             ICL offers several advantages over traditional approaches. It enables fast adaptation, allowing the model to perform new tasks instantly without retraining. Because the model’s parameters remain unchanged, there is no risk associated with altering its core behavior. ICL is also highly flexible, working across text, numbers, code, and even abstract patterns, and it often requires only a small number of demonstrations—sometimes just a single example—to be effective.
           </p>
         </div>
-      </div>
-    </div>
+    </article>
   </div>
     <div class="column has-text-centered">
       <div class="publication-links">
@@ -466,7 +345,7 @@
           <span class="icon">
             <i class="fas fa-home"></i>
           </span>
-          <span>Click Here to Go Back</span>
+          <span>Back to home</span>
           </a>
         </span>
       </div>
@@ -475,17 +354,17 @@
 <!-- End paper abstract -->
 
 <!--References-->
-<section class="section hero is-light">
+<section class="section hero is-light" id="references">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">References</h2>
         <div class="content has-text-left">
-          <p style="text-indent: -2em; font-size: 0.85em;">
+          <p>
             Mirchandani, S., Xia, F., Florence, P., Ichter, B., Driess, D., Arenas, M.G., Rao, K., Sadigh, D. and Zeng, A. (2023, December). 
             Large Language Models as General Pattern Machines. <i>In Conference on Robot Learning</i> (pp. 2498-2518). PMLR.
           </p>
-          <p style="text-indent: -2em; font-size: 0.85em;">
+          <p>
             Chollet, F. (2019). 
             On the Measure of Intelligence. <i>arXiv preprint arXiv:1911.01547.</i>
           </p>
@@ -496,13 +375,15 @@
 </section>
 <!--End References-->
 
-<section class="section hero is-light">
+</main>
+
+<section class="footer-section">
   <div class="container">
       <div class="column is-six-sevenths">
         <div class="content has-text-centered">
-          <p style="font-size: 0.7rem;">
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" style="color: #8C1D40 !important;"><strong>Academic Project Page Template</strong></a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" style="color: #8C1D40 !important;"><strong>Creative Commons Attribution-ShareAlike 4.0 International License</strong></a>.
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank"><strong>Academic Project Page Template</strong></a>, adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><strong>Creative Commons Attribution-ShareAlike 4.0 International License</strong></a>.
           </p>
         </div>
       </div>
@@ -510,13 +391,6 @@
 </section>
 
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-    
 <script>
   const objectives = [
     { name: "One", image: "static/images/sequence_transformation_1.png" },
@@ -530,7 +404,9 @@
   function updateGlobalIndex(direction) {
     currentIndex = (currentIndex + direction + objectives.length) % objectives.length;
     const { name, image } = objectives[currentIndex];
-    document.getElementById("displayedImage").src = image;
+    const displayedImage = document.getElementById("displayedImage");
+    displayedImage.src = image;
+    displayedImage.alt = `Sequence transformation task ${name.toLowerCase()}`;
     document.getElementById("objectiveText").textContent = `Task ${name}`;
   }
 
